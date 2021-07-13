@@ -1,4 +1,4 @@
-print("hello you")
+print("hello Adventurer!")
 name = input("What is your name? ")
 age = int(input("What is your age? "))
 
@@ -15,6 +15,8 @@ if age >= 18:
         print("You are starting with", health, "health")
         print("let's play!")
 
+        weapon = input("Pick a weapon (sword/bow/axe) ")
+
         left_or_right = input("First Choice... Left or Right (left/right)? ")
         if left_or_right == "left":
             ans = input("Nice, you follow the path and reach a lake... Do you swim across or go around? (across/around)? ")
@@ -28,13 +30,13 @@ if age >= 18:
 
             ans = input("You see a river and a house, Which do you go to(river/house)? ")
             if ans == "house":
-                print("You go the house and get attacked by the owner, you loose 5 health")
+                print("You go the house and get attacked by the owner, you loose 5 health.")
                 health -= 5
 
                 if health <= 0:
                     print("You have 0 health and you lost the game...")
-                else:
-                    print("You manage to escape and reach a village, you win!")
+                elif weapon == "sword" or "axe":
+                    print("Luckily, you manage to fight back thanks to your", weapon, "and escape. You reach a village, you win!")
 
             else:
                 print("you fell into the river and lost...")
