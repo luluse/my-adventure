@@ -6,13 +6,13 @@ print("Hello", name, "your are", age, "years old")
 
 health = 10
 
-print("You are starting with", health, "health")
 
 if age >= 18:
     print("You are old enough to play!")
 
     wants_to_play = input("Do you want to play? ").lower()
-    if wants_to_play == "yes": 
+    if wants_to_play == "yes":
+        print("You are starting with", health, "health")
         print("let's play!")
 
         left_or_right = input("First Choice... Left or Right (left/right)? ")
@@ -25,6 +25,19 @@ if age >= 18:
             elif ans == "across":
                 print("You managed to get across, but were bit by an Eel and lost 5 health.")
                 health -= 5
+
+            ans = input("You see a river and a house, Which do you go to(river/house)? ")
+            if ans == "house":
+                print("You go the house and get attacked by the owner, you loose 5 health")
+                health -= 5
+
+                if health <= 0:
+                    print("You have 0 health and you lost the game...")
+                else:
+                    print("You manage to escape and reach a village, you win!")
+
+            else:
+                print("you fell into the river and lost...")
 
 
         else:
